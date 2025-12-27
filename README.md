@@ -4,49 +4,14 @@ Internal Claude Code plugin for Sendify employees. Provides code review tools, s
 
 ## Installation
 
-### Option 1: Clone into your project
-
-```bash
-git clone https://github.com/holgersendify/sendify-claude-plugin.git
-cd your-project
-claude --plugin-dir ../sendify-claude-plugin
-```
-
-### Option 2: Git submodule (recommended for shared projects)
-
-```bash
-cd your-project
-git submodule add https://github.com/holgersendify/sendify-claude-plugin.git .claude-plugins/sendify
-git submodule update --init --recursive
-```
-
-Then run Claude with the plugin:
-
-```bash
-claude --plugin-dir .claude-plugins/sendify
-```
-
-### Option 3: Marketplace
-
-Create a marketplace file in your project:
-
-```json
-{
-  "name": "sendify-marketplace",
-  "owner": { "name": "Sendify" },
-  "plugins": [{
-    "name": "sendify",
-    "source": { "source": "github", "repo": "holgersendify/sendify-claude-plugin" }
-  }]
-}
-```
-
-Then install:
+In Claude Code, run:
 
 ```
-/plugin marketplace add ./marketplace.json
-/plugin install sendify@sendify-marketplace
+/plugin marketplace add holgersendify/sendify-claude-plugin
+/plugin install sendify@sendify-claude-plugin
 ```
+
+That's it. The plugin is now available in your project.
 
 ## First-Time Setup
 

@@ -1,0 +1,13 @@
+{
+  "name": "sendify-claude-plugin",
+  "owner": {
+    "name": "Sendify"
+  },
+  "plugins": [
+    {
+      "name": "sendify",
+      "source": ".",
+      "description": "Internal Sendify plugin with code review tools, safety-critical coding guidelines, and logistics management"
+    }
+  ]
+}
