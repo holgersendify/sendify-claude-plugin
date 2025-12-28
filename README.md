@@ -70,6 +70,15 @@ Internal logistics management server:
 
 Library documentation lookup. Works out of the box.
 
+### Playwright
+
+Browser automation via `@playwright/mcp`:
+
+- Navigate and interact with web pages
+- Click elements, fill forms, extract content
+- Take screenshots and accessibility snapshots
+- No vision models needed
+
 ## LSP Configuration
 
 Language servers configured in `.lsp.json`:

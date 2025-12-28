@@ -31,6 +31,16 @@ Internal logistics management server at `https://app.sendify.se/mcp`. Requires a
 
 Library documentation lookup via `@upstash/context7-mcp`. Works out of the box.
 
+### Playwright
+
+Browser automation via `@playwright/mcp`. Enables interaction with web pages through structured accessibility snapshots.
+
+**Capabilities:**
+- Navigate to URLs and interact with pages
+- Click elements, fill forms, take screenshots
+- Extract page content and accessibility trees
+- No vision models needed - operates on structured data
+
 ## LSP Configuration
 
 Language servers are configured in `.lsp.json`:

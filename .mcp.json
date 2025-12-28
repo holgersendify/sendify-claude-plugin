@@ -4,6 +4,10 @@
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"]
     },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
     "sendify": {
       "type": "http",
       "url": "https://app.sendify.se/mcp"
