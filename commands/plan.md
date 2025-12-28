@@ -190,12 +190,10 @@ After generating the plan, end with:
 
 ## Next Steps
 
-1. Start implementing this plan
+1. Review this plan and provide feedback
 2. Ask questions to clarify any section
-3. Request changes (simplify, add detail)
-4. Run `/sendify:code-review` when ready
-
-Would you like to start working on this?
+3. Request changes (simplify, add detail, adjust scope)
+4. When ready, ask the user to run `/sendify:work [path-to-plan]` to start the work.
 ```
 
 ## Guidelines
