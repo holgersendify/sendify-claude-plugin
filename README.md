@@ -4,34 +4,60 @@ Internal Claude Code plugin for Sendify employees. Provides code review tools, s
 
 ## Installation
 
+### Option 1: Marketplace (For Team Members)
+
 In Claude Code, run:
 
-```
+```bash
 /plugin marketplace add holgersendify/sendify-claude-plugin
 /plugin install sendify@sendify-claude-plugin
 ```
 
-That's it. The plugin is now available in all your projects.
+The plugin is now available in all your projects.
+
+### Option 2: Development Mode (For Contributors)
+
+If you're developing the plugin, clone the repo and use symlink for live updates:
+
+```bash
+# Clone the repo
+git clone https://github.com/sendify/sendify-claude-plugin.git ~/sendify/sendify-claude-plugin
+
+# Set up development mode (one-time setup)
+mkdir -p ~/.claude/plugins/local
+ln -s ~/sendify/sendify-claude-plugin ~/.claude/plugins/local/sendify-claude-plugin
+```
+
+Then update `~/.claude/plugins/installed_plugins.json`:
+```json
+{
+  "sendify@sendify-claude-plugin": [{
+    "installPath": "/Users/YOUR_USERNAME/.claude/plugins/local/sendify-claude-plugin",
+    "version": "dev",
+    "isDevelopment": true
+  }]
+}
+```
+
+Replace `YOUR_USERNAME` with your actual username.
+
+Restart Claude Code. Changes in the repo are now immediately reflected.
 
 ### Updating
 
-To update to the latest version:
-
-```
+**Marketplace users:**
+```bash
 /plugin marketplace remove sendify-claude-plugin
 /plugin marketplace add holgersendify/sendify-claude-plugin
 /plugin install sendify@sendify-claude-plugin
 ```
 
-### How it works
-
-There's no central plugin registry. The GitHub repo path **is** the marketplace. When you run the commands above, Claude Code:
-
-1. Fetches this repo from GitHub
-2. Reads `.claude-plugin/marketplace.json` to discover available plugins
-3. Installs the `sendify` plugin to your local Claude Code
-
-You only need to run this once. After that, the plugin is cached and available everywhere.
+**Development mode users:**
+```bash
+cd ~/sendify/sendify-claude-plugin
+git pull origin main
+# Restart Claude Code
+```
 
 ## First-Time Setup
 
@@ -109,4 +135,40 @@ Language servers configured in `.lsp.json`:
 | gopls | Go | `go install golang.org/x/tools/gopls@latest` |
 | typescript-language-server | TypeScript, JavaScript | `npm install -g typescript-language-server typescript` |
 
+## Contributing
+
+### Development Workflow
+
+1. **Set up development mode** (see Installation > Option 2)
+2. **Make changes** to commands, agents, or skills
+3. **Test immediately** - changes are live after restart
+4. **Commit and push:**
+   ```bash
+   git add .
+   git commit -m "your change description"
+   git push origin main
+   ```
+
+### File Structure
+
+```
+.
+├── commands/          # CLI commands (/sendify:command-name)
+│   ├── review.md     # Multi-agent code review
+│   ├── blueprint.md  # Feature planning
+│   └── build.md      # Blueprint execution
+├── agents/           # Specialized review agents
+│   ├── code-simplicity-reviewer.md
+│   └── power-of-ten-reviewer.md
+└── skills/           # Language-specific implementations
+    ├── power-of-ten-go/
+    └── power-of-ten-ts/
+```
+
+### Guidelines
+
+- Follow patterns in [CLAUDE.md](CLAUDE.md) for code and documentation
+- Keep commands concise and focused
+- Test with `/review` and `/sendify:build` before pushing
+- Update this README if adding new features
 
