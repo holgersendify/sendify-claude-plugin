@@ -154,3 +154,4 @@ After user approval:
 2. Save as `.blueprint/[feature-name].md` (kebab-case)
 3. Check `.gitignore` - offer to add `.blueprint/` if missing
 4. Show: "Blueprint saved to `.blueprint/[feature-name].md`. Run `/sendify:build .blueprint/[feature-name].md` to execute."
+5. DO NOT start implementing the blueprint.
