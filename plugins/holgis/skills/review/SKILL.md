@@ -1,7 +1,6 @@
 ---
 name: review
 description: Multi-agent code review for finding bugs and issues
-disable-model-invocation: true
 ---
 
 Thorough code review using specialized agents for bug detection, security, and standards compliance.
