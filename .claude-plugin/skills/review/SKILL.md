@@ -1,7 +1,6 @@
 ---
 name: review
 description: Multi-agent code review for finding bugs and issues
-allowed-tools: Bash(git diff:*), Bash(git show:*), Bash(git log:*), Bash(git status:*)
 ---
 
 Thorough code review using specialized agents for bug detection, security, and standards compliance.
@@ -32,7 +31,7 @@ If no changes found, ask user what to review.
 
 Launch all 5 agents simultaneously, reviewing only code introduced in this change.
 
-**Agent 1: CLAUDE.md Compliance (Sonnet)** - Quote exact rules violated. Skip if reviewing branch commits.
+**Agent 1: CLAUDE.md Compliance (Sonnet)** - Quote exact rules violated.
 
 **Agent 2: Bug Scan (Opus)** - Runtime crashes, nil panics, unchecked errors, logic errors only.
 
@@ -40,7 +39,7 @@ Launch all 5 agents simultaneously, reviewing only code introduced in this chang
 
 **Agent 4: Simplicity (Sonnet)** - Use `code-simplicity-reviewer` agent for YAGNI violations and over-engineering.
 
-**Agent 5: Power of Ten (Haiku)** - Use `power-of-ten-reviewer` agent for safety-critical rule violations.
+**Agent 5: Power of Ten (Sonnet)** - Use `power-of-ten-reviewer` agent for safety-critical rule violations.
 
 **HIGH SIGNAL ONLY**: Flag only objective bugs, clear rule violations with quoted rules, and security vulnerabilities. Skip subjective concerns, "might be" issues, pre-existing problems, and anything requiring interpretation.
 
