@@ -1,16 +1,16 @@
 #!/bin/bash
 set -e
 
-PLUGIN_JSON=".claude-plugin/plugin.json"
+PLUGIN_JSON="plugin.json"
 
 # Only bump if plugin.json exists
 [ -f "$PLUGIN_JSON" ] || exit 0
 
-# Check if any .claude-plugin files are staged (excluding plugin.json itself to avoid loops)
-staged_claude_files=$(git diff --cached --name-only -- '.claude-plugin/' | grep -v '^\.claude-plugin/plugin\.json$' || true)
+# Check if any plugin files are staged (excluding plugin.json itself to avoid loops)
+staged_plugin_files=$(git diff --cached --name-only -- 'agents/' 'skills/' '.mcp.json' '.lsp.json' | head -1 || true)
 
-# Exit if no claude plugin files are staged
-[ -n "$staged_claude_files" ] || exit 0
+# Exit if no plugin files are staged
+[ -n "$staged_plugin_files" ] || exit 0
 
 # Read current version
 current=$(grep '"version"' "$PLUGIN_JSON" | sed 's/.*"version": *"\([^"]*\)".*/\1/')

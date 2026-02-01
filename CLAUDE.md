@@ -13,16 +13,20 @@ Internal Claude Code plugin for Sendify employees. This plugin provides MCP serv
 
 ## Structure
 
-- `.claude-plugin/` - Claude Code plugin (skills, agents, MCP/LSP configs)
-- `.opencode/` - OpenCode configuration (mirrors Claude plugin functionality)
-- `Makefile` - Installation commands for both platforms
+- `plugin.json` - Plugin manifest
+- `marketplace.json` - Marketplace configuration
+- `.mcp.json` - MCP server configurations
+- `.lsp.json` - LSP server configurations
+- `agents/` - Custom agent definitions
+- `skills/` - Skill definitions
+- `Makefile` - Installation commands
 
 ## Installation
 
 ```bash
-make install           # Install for Claude Code and OpenCode
-make claude-install    # Claude Code only
-make opencode-install  # OpenCode only
+make install    # Install plugin
+make uninstall  # Uninstall plugin
+make update     # Update plugin
 ```
 
 ## Skills
@@ -57,4 +61,4 @@ Design system integration via `https://mcp.figma.com/mcp`.
 
 ## Versioning
 
-Pre-commit hook auto-bumps `.claude-plugin/plugin.json` version when files in `.claude-plugin/` change.
+Pre-commit hook auto-bumps `plugin.json` version when plugin files change.

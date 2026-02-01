@@ -1,6 +1,6 @@
 # Sendify AI Plugin
 
-Internal AI coding assistant plugin for Sendify employees. Supports both Claude Code and OpenCode.
+Internal Claude Code plugin for Sendify employees.
 
 ## Quick Start
 
@@ -11,14 +11,10 @@ git config core.hooksPath .githooks
 make install
 ```
 
-This installs the plugin for both Claude Code and OpenCode.
-
 ## Installation
 
-### Claude Code
-
 ```bash
-make claude-install
+make install
 ```
 
 Or manually:
@@ -29,25 +25,17 @@ claude plugin install sendify@ai-plugins
 
 Enable auto-updates via `/plugin` > Marketplaces > ai-plugins > Enable auto-update.
 
-### OpenCode
-
-```bash
-make opencode-install
-```
-
 ### Uninstall
 
 ```bash
-make uninstall          # Both
-make claude-uninstall   # Claude Code only
-make opencode-uninstall # OpenCode only
+make uninstall
 ```
 
 ## Setup
 
 After installation, authenticate with Sendify MCP:
 
-1. Run `/mcp` in your AI assistant
+1. Run `/mcp` in Claude Code
 2. Click "Authenticate" next to Sendify
 3. Log in with your Sendify credentials
 
@@ -55,17 +43,16 @@ After installation, authenticate with Sendify MCP:
 
 | Command | Description |
 |---------|-------------|
-| `/review` | Multi-agent code review (bugs, security, simplicity, Power of Ten) |
-| `/blueprint` | Create implementation plans for features |
-| `/build` | Execute blueprints with quality checks |
-| `/commit` | Create git commits |
+| `/sendify:review` | Multi-agent code review (bugs, security, simplicity, Power of Ten) |
+| `/sendify:explore` | Research solutions and patterns before planning |
+| `/sendify:commit` | Create git commits |
 
 ### Review Examples
 
 ```
-/review                     # Review changes vs develop branch
-/review src/api/handler.go  # Review specific files
-/review HEAD~3              # Review last 3 commits
+/sendify:review                     # Review changes vs develop branch
+/sendify:review src/api/handler.go  # Review specific files
+/sendify:review HEAD~3              # Review last 3 commits
 ```
 
 ## MCP Servers
@@ -86,8 +73,8 @@ After installation, authenticate with Sendify MCP:
 
 Safety-critical coding guidelines adapted from NASA/JPL's "Power of Ten":
 
-- **power-of-ten-go** - Go-specific rules
-- **power-of-ten-ts** - TypeScript/React rules
+- `/sendify:power-of-ten-go` - Go-specific rules
+- `/sendify:power-of-ten-ts` - TypeScript/React rules
 
 ## LSP Servers
 
@@ -106,7 +93,7 @@ cd ai-plugins
 git config core.hooksPath .githooks
 ```
 
-The pre-commit hook auto-bumps the plugin version when `.claude-plugin/` files change.
+The pre-commit hook auto-bumps the plugin version when plugin files change.
 
 ## Optional: GitLab CLI
 
