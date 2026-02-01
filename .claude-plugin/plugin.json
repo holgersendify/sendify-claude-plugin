@@ -7,16 +7,16 @@
   },
   "keywords": ["logistics", "shipping", "go", "typescript", "react"],
   "skills": [
-    "./.claude-plugin/skills/commit/SKILL.md",
-    "./.claude-plugin/skills/review/SKILL.md",
-    "./.claude-plugin/skills/explore/SKILL.md",
-    "./.claude-plugin/skills/power-of-ten-ts/SKILL.md",
-    "./.claude-plugin/skills/power-of-ten-go/SKILL.md"
+    "./skills/commit/SKILL.md",
+    "./skills/review/SKILL.md",
+    "./skills/explore/SKILL.md",
+    "./skills/power-of-ten-ts/SKILL.md",
+    "./skills/power-of-ten-go/SKILL.md"
   ],
   "agents": [
-    "./.claude-plugin/agents/code-simplicity-reviewer.md",
-    "./.claude-plugin/agents/power-of-ten-reviewer.md"
+    "./agents/code-simplicity-reviewer.md",
+    "./agents/power-of-ten-reviewer.md"
   ],
-  "lspServers": "./.claude-plugin/.lsp.json",
-  "mcpServers": "./.claude-plugin/.mcp.json"
+  "lspServers": "./.lsp.json",
+  "mcpServers": "./.mcp.json"
 }
